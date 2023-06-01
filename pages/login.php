@@ -1,13 +1,12 @@
-<?php 
+<?php
 session_start();
-if(isset($_POST['submit'])){
-	
-	 include('../config/DbFunction.php');
-	 $obj=new DbFunction();
-	 $_SESSION['login']=$_POST['id'];
-	 $obj->login($_POST['id'],$_POST['password']);
+if (isset($_POST['submit'])) {
+
+    include '../config/DbFunction.php';
+    $obj = new DbFunction();
+    $_SESSION['login'] = $_POST['id'];
+    $obj->login($_POST['id'], $_POST['password']);
 }
-	
 
 ?>
 <!DOCTYPE html>
@@ -21,7 +20,7 @@ if(isset($_POST['submit'])){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>School Management Login </title>
+    <title>Student Record System's Login Page</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -65,7 +64,7 @@ if(isset($_POST['submit'])){
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Password" id="password"name="password" type="password" value="">
                                 </div>
-                              
+
                                 <!-- Change this to a button or input when using this as a form -->
                                 <input type="submit" value="login" name="submit" class="btn btn-lg btn-success btn-block">
                             </fieldset>
@@ -90,7 +89,7 @@ if(isset($_POST['submit'])){
  <script src="../dist/jquery-1.3.2.js" type="text/javascript"></script>
  <script src="../dist/jquery.validate.js" type="text/javascript"></script>
  <script type="text/javascript">
-            
+
             jQuery(function(){
                 jQuery("#id").validate({
                     expression: "if (VAL.match(/^[a-z]$/)) return true; else return false;",
@@ -100,9 +99,9 @@ if(isset($_POST['submit'])){
                     expression: "if (VAL.match(/^[a-z]$/)) return true; else return false;",
                     message: "Should be a valid password"
                 });
-                
+
             });
-            
+
         </script>
 </body>
 
